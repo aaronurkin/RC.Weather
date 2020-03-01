@@ -6,11 +6,10 @@
 
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="6.2.2" />
-    <PackageReference Include="System.ComponentModel.Annotations" Version="4.7.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\RC.Weather.Application.Models\RC.Weather.Application.Models.csproj" />
+    <ProjectReference Include="..\RC.Weather.ThirdParty.Models\RC.Weather.ThirdParty.Models.csproj" />
   </ItemGroup>
 
 </Project>

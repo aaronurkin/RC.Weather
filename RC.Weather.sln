@@ -5,11 +5,29 @@ VisualStudioVersion = 16.0.29806.167
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Hosting", "Hosting", "{49DB5D79-B353-4F82-9408-B20CE7C9EA1A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RC.Weather.Api", "Hosting\RC.Weather.Api\RC.Weather.Api.csproj", "{D0C7FA65-B4A0-49BD-AB3C-4CC4DA222D45}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RC.Weather.Api", "Hosting\RC.Weather.Api\RC.Weather.Api.csproj", "{D0C7FA65-B4A0-49BD-AB3C-4CC4DA222D45}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RC.Weather.Presentation", "RC.Weather.Presentation\RC.Weather.Presentation.csproj", "{8DFAC176-5DA0-4782-8A03-A30AFF01707A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RC.Weather.Presentation", "RC.Weather.Presentation\RC.Weather.Presentation.csproj", "{8DFAC176-5DA0-4782-8A03-A30AFF01707A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RC.Weather.Presentation.Models", "RC.Weather.Presentation.Models\RC.Weather.Presentation.Models.csproj", "{23805A49-8196-4DC9-BA1F-239FDD997D31}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RC.Weather.Presentation.Models", "RC.Weather.Presentation.Models\RC.Weather.Presentation.Models.csproj", "{23805A49-8196-4DC9-BA1F-239FDD997D31}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RC.Weather.Common", "RC.Weather.Common\RC.Weather.Common.csproj", "{556556D4-1336-4AAB-9045-DDD8B60144B8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RC.Weather.Application.Services", "RC.Weather.Application.Services\RC.Weather.Application.Services.csproj", "{5106F927-5449-463F-9AEA-C4374C1AC264}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RC.Weather.Application.Models", "RC.Weather.Application.Models\RC.Weather.Application.Models.csproj", "{E5705DDE-4043-4FB4-B2E4-F413A205D690}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RC.Weather.Infrastructure", "RC.Weather.Infrastructure\RC.Weather.Infrastructure.csproj", "{31BEE2E7-30D2-441C-AC2A-59191100D5CF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RC.Weather.ThirdParty.Services", "RC.Weather.ThirdParty.Services\RC.Weather.ThirdParty.Services.csproj", "{BF53DE57-80AD-4CE8-A6EC-9D6BF4AEBA5C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RC.Weather.Repositories", "RC.Weather.Repositories\RC.Weather.Repositories.csproj", "{CA220B0F-A50C-498B-9AAF-329D5F579D67}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RC.Weather.Domain.Models", "RC.Weather.Domain.Models\RC.Weather.Domain.Models.csproj", "{BB3DD724-2FBB-41CA-BC47-97E1F9AE473A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RC.Weather.Domain.Services", "RC.Weather.Domain.Services\RC.Weather.Domain.Services.csproj", "{534C0207-4C69-4013-BF04-1EF6C64D2642}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RC.Weather.ThirdParty.Models", "RC.Weather.ThirdParty.Models\RC.Weather.ThirdParty.Models.csproj", "{E010230F-EBB1-4EC2-9D1E-D147A134AB92}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,6 +47,42 @@ Global
 		{23805A49-8196-4DC9-BA1F-239FDD997D31}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{23805A49-8196-4DC9-BA1F-239FDD997D31}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{23805A49-8196-4DC9-BA1F-239FDD997D31}.Release|Any CPU.Build.0 = Release|Any CPU
+		{556556D4-1336-4AAB-9045-DDD8B60144B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{556556D4-1336-4AAB-9045-DDD8B60144B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{556556D4-1336-4AAB-9045-DDD8B60144B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{556556D4-1336-4AAB-9045-DDD8B60144B8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5106F927-5449-463F-9AEA-C4374C1AC264}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5106F927-5449-463F-9AEA-C4374C1AC264}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5106F927-5449-463F-9AEA-C4374C1AC264}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5106F927-5449-463F-9AEA-C4374C1AC264}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E5705DDE-4043-4FB4-B2E4-F413A205D690}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E5705DDE-4043-4FB4-B2E4-F413A205D690}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E5705DDE-4043-4FB4-B2E4-F413A205D690}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E5705DDE-4043-4FB4-B2E4-F413A205D690}.Release|Any CPU.Build.0 = Release|Any CPU
+		{31BEE2E7-30D2-441C-AC2A-59191100D5CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{31BEE2E7-30D2-441C-AC2A-59191100D5CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{31BEE2E7-30D2-441C-AC2A-59191100D5CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{31BEE2E7-30D2-441C-AC2A-59191100D5CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BF53DE57-80AD-4CE8-A6EC-9D6BF4AEBA5C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF53DE57-80AD-4CE8-A6EC-9D6BF4AEBA5C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF53DE57-80AD-4CE8-A6EC-9D6BF4AEBA5C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF53DE57-80AD-4CE8-A6EC-9D6BF4AEBA5C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CA220B0F-A50C-498B-9AAF-329D5F579D67}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA220B0F-A50C-498B-9AAF-329D5F579D67}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA220B0F-A50C-498B-9AAF-329D5F579D67}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA220B0F-A50C-498B-9AAF-329D5F579D67}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BB3DD724-2FBB-41CA-BC47-97E1F9AE473A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB3DD724-2FBB-41CA-BC47-97E1F9AE473A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB3DD724-2FBB-41CA-BC47-97E1F9AE473A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB3DD724-2FBB-41CA-BC47-97E1F9AE473A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{534C0207-4C69-4013-BF04-1EF6C64D2642}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{534C0207-4C69-4013-BF04-1EF6C64D2642}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{534C0207-4C69-4013-BF04-1EF6C64D2642}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{534C0207-4C69-4013-BF04-1EF6C64D2642}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E010230F-EBB1-4EC2-9D1E-D147A134AB92}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E010230F-EBB1-4EC2-9D1E-D147A134AB92}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E010230F-EBB1-4EC2-9D1E-D147A134AB92}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E010230F-EBB1-4EC2-9D1E-D147A134AB92}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

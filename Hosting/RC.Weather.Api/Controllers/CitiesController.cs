@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using RC.Weather.Presentation.Models.Requests;
 using System.Collections.Generic;
 
 namespace RC.Weather.Api.Controllers
@@ -7,11 +8,12 @@ namespace RC.Weather.Api.Controllers
     {
         // GET: api/cities
         [HttpGet]
-        public IEnumerable<string> Get()
+        public IEnumerable<int> Get([FromQuery] PresentationCitiesListRequest model)
         {
-            return new string[] { "value1", "value2" };
+            return new int[] { model.Page, model.PageSize };
         }
 
+        /*
         // GET: api/Cities/5
         [HttpGet("{id}", Name = "Get")]
         public string Get(int id)
@@ -36,5 +38,6 @@ namespace RC.Weather.Api.Controllers
         public void Delete(int id)
         {
         }
+        */
     }
 }
