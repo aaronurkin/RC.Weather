@@ -1,12 +1,10 @@
-﻿using AutoMapper;
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using RC.Weather.Common.IoC;
 using RC.Weather.Presentation.IoC;
-using System.Linq;
 
 namespace RC.Weather.Api
 {
