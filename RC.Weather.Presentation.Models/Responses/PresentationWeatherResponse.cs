@@ -2,8 +2,6 @@
 {
 	public class PresentationWeatherResponse
 	{
-		public string CityName { get; set; }
-
 		public double Temperature { get; set; }
 
 		public string Text { get; set; }

@@ -1,5 +1,7 @@
 ﻿using RC.Weather.Common.Mapper;
 using RC.Weather.Domain.Models;
+using RC.Weather.Repositories;
+using RC.Weather.Repositories.Models;
 using RC.Weather.ThirdParty.Services.Weather;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,13 +12,16 @@ namespace RC.Weather.Domain.Services
 	public class WeatherDomainService : IWeatherDomainService
 	{
 		private readonly IModelMapper mapper;
+		private readonly IDatabaseUnit database;
 		private readonly IWeatherService weatherService;
 
 		public WeatherDomainService(
 			IModelMapper mapper,
+			IDatabaseUnit database,
 			IWeatherService weatherService)
 		{
 			this.mapper = mapper;
+			this.database = database;
 			this.weatherService = weatherService;
 		}
 
@@ -30,8 +35,25 @@ namespace RC.Weather.Domain.Services
 
 		public async Task<DomainWeatherModel> GetCityWeatherAsync(object cityCode)
 		{
-			var weather = await this.weatherService.GetCityWeatherAsync(cityCode);
-			var model = this.mapper.Map<DomainWeatherModel>(weather);
+			DomainWeatherModel model;
+			var code = $"{cityCode}";
+
+			var condition = this.database.Conditions.GetSingle(code);
+
+			if (condition == null)
+			{
+				var weather = await this.weatherService.GetCityWeatherAsync(cityCode);
+
+				condition = this.mapper.Map<ConditionDbModel>(weather);
+				condition.CityCode = code;
+
+				this.database.Conditions.Create(condition);
+			}
+
+			var favorite = this.database.Favorites.GetSingle(code);
+
+			model = this.mapper.Map<DomainWeatherModel>(condition);
+			model.IsFavorite = favorite != null;
 
 			return model;
 		}
