@@ -17,8 +17,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RC.Weather.Application.Serv
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RC.Weather.Application.Models", "RC.Weather.Application.Models\RC.Weather.Application.Models.csproj", "{E5705DDE-4043-4FB4-B2E4-F413A205D690}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RC.Weather.Infrastructure", "RC.Weather.Infrastructure\RC.Weather.Infrastructure.csproj", "{31BEE2E7-30D2-441C-AC2A-59191100D5CF}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RC.Weather.ThirdParty.Services", "RC.Weather.ThirdParty.Services\RC.Weather.ThirdParty.Services.csproj", "{BF53DE57-80AD-4CE8-A6EC-9D6BF4AEBA5C}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RC.Weather.Repositories", "RC.Weather.Repositories\RC.Weather.Repositories.csproj", "{CA220B0F-A50C-498B-9AAF-329D5F579D67}"
@@ -61,10 +59,6 @@ Global
 		{E5705DDE-4043-4FB4-B2E4-F413A205D690}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E5705DDE-4043-4FB4-B2E4-F413A205D690}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E5705DDE-4043-4FB4-B2E4-F413A205D690}.Release|Any CPU.Build.0 = Release|Any CPU
-		{31BEE2E7-30D2-441C-AC2A-59191100D5CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{31BEE2E7-30D2-441C-AC2A-59191100D5CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{31BEE2E7-30D2-441C-AC2A-59191100D5CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{31BEE2E7-30D2-441C-AC2A-59191100D5CF}.Release|Any CPU.Build.0 = Release|Any CPU
 		{BF53DE57-80AD-4CE8-A6EC-9D6BF4AEBA5C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{BF53DE57-80AD-4CE8-A6EC-9D6BF4AEBA5C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BF53DE57-80AD-4CE8-A6EC-9D6BF4AEBA5C}.Release|Any CPU.ActiveCfg = Release|Any CPU
