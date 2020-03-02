@@ -4,9 +4,9 @@ using RC.Weather.Presentation.Models.Responses;
 
 namespace RC.Weather.Presentation.Mapping
 {
-	public class WeatherMappingProfile : Profile
+	public class PresentationWeatherMappingProfile : Profile
 	{
-		public WeatherMappingProfile()
+		public PresentationWeatherMappingProfile()
 		{
 			CreateMap<ApplicationWeatherModel, PresentationWeatherResponse>()
 				.ForMember(response => response.Text, o => o.MapFrom(app => app.WeatherText));

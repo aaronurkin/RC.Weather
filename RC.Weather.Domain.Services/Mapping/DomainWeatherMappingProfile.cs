@@ -5,9 +5,9 @@ using RC.Weather.ThirdParty.Models;
 
 namespace RC.Weather.Domain.Services.Mapping
 {
-	public class WeatherMappingProfile : Profile
+	public class DomainWeatherMappingProfile : Profile
 	{
-		public WeatherMappingProfile()
+		public DomainWeatherMappingProfile()
 		{
 			CreateMap<ThirdPartyWeatherApiResponse, DomainWeatherModel>()
 				.ForMember(weatherModel => weatherModel.IsFavorite, o => o.Ignore())

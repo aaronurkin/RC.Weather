@@ -9,7 +9,7 @@ namespace RC.Weather.Application.Services.IoC
 		public static IServiceCollection AddApplicationServices(this IServiceCollection services, IConfiguration configuration)
 		{
 			services.AddDomainServices(configuration);
-			services.AddScoped<IWeatherApplicationService, WeatherApplicationService>();
+			services.AddScoped<IApplicationWeatherService, ApplicationWeatherService>();
 
 			return services;
 		}

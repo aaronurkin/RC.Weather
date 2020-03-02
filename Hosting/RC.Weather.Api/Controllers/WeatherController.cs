@@ -7,9 +7,9 @@ namespace RC.Weather.Api.Controllers
 {
     public class WeatherController : ApplicationBaseController
     {
-        private readonly IWeatherPresentationService weatherPresentationService;
+        private readonly IPresentationWeatherService weatherPresentationService;
 
-        public WeatherController(IWeatherPresentationService weatherPresentationService)
+        public WeatherController(IPresentationWeatherService weatherPresentationService)
         {
             this.weatherPresentationService = weatherPresentationService;
         }

@@ -6,19 +6,14 @@ using System.Threading.Tasks;
 
 namespace RC.Weather.Application.Services
 {
-	public interface IWeatherApplicationService
-	{
-		Task<ApplicationServiceResult<ApplicationWeatherModel>> GetWeatherAsync(ApplicationWeatherRequest filter);
-	}
-
-	public class WeatherApplicationService : IWeatherApplicationService
+	public class ApplicationWeatherService : IApplicationWeatherService
 	{
 		private readonly IModelMapper mapper;
-		private readonly IWeatherDomainService weatherService;
+		private readonly IDomainWeatherService weatherService;
 
-		public WeatherApplicationService(
+		public ApplicationWeatherService(
 			IModelMapper mapper,
-			IWeatherDomainService weatherService)
+			IDomainWeatherService weatherService)
 		{
 			this.mapper = mapper;
 			this.weatherService = weatherService;

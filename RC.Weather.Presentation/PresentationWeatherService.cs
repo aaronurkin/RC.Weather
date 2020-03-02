@@ -11,20 +11,16 @@ using System.Threading.Tasks;
 
 namespace RC.Weather.Presentation
 {
-	public interface IWeatherPresentationService
-	{
-		Task<ApiResponse<PresentationWeatherResponse>> GetWeatherAsync(PresentationWeatherRequest requestDto);
-	}
-	public class WeatherPresentationService : IWeatherPresentationService
+	public class PresentationWeatherService : IPresentationWeatherService
 	{
 		private readonly ILogger logger;
 		private readonly IModelMapper mapper;
-		private readonly IWeatherApplicationService weatherService;
+		private readonly IApplicationWeatherService weatherService;
 
-		public WeatherPresentationService(
+		public PresentationWeatherService(
 			IModelMapper mapper,
-			IWeatherApplicationService weatherService,
-			ILogger<WeatherPresentationService> logger)
+			IApplicationWeatherService weatherService,
+			ILogger<PresentationWeatherService> logger)
 		{
 			this.logger = logger;
 			this.mapper = mapper;

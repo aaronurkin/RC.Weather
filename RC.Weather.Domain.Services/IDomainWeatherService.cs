@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 
 namespace RC.Weather.Domain.Services
 {
-	public interface IWeatherDomainService
+	public interface IDomainWeatherService
 	{
 		Task<List<DomainCityModel>> SearchCityAsync(string term);
 		Task<DomainWeatherModel> GetCityWeatherAsync(object cityCode);

@@ -9,13 +9,13 @@ using System.Threading.Tasks;
 
 namespace RC.Weather.Domain.Services
 {
-	public class WeatherDomainService : IWeatherDomainService
+	public class DomainWeatherService : IDomainWeatherService
 	{
 		private readonly IModelMapper mapper;
 		private readonly IDatabaseUnit database;
 		private readonly IWeatherService weatherService;
 
-		public WeatherDomainService(
+		public DomainWeatherService(
 			IModelMapper mapper,
 			IDatabaseUnit database,
 			IWeatherService weatherService)

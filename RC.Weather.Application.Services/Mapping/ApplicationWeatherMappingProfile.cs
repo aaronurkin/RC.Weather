@@ -4,9 +4,9 @@ using RC.Weather.Domain.Models;
 
 namespace RC.Weather.Application.Services.Mapping
 {
-	public class WeatherMappingProfile : Profile
+	public class ApplicationWeatherMappingProfile : Profile
 	{
-		public WeatherMappingProfile()
+		public ApplicationWeatherMappingProfile()
 		{
 			CreateMap<DomainWeatherModel, ApplicationWeatherModel>()
 				.ForMember(app => app.IsFavorite, o => o.MapFrom(domain => domain.IsFavorite))
