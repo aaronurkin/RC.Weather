@@ -13,24 +13,16 @@ namespace RC.Weather.Domain.Services
 	{
 		private readonly IModelMapper mapper;
 		private readonly IDatabaseUnit database;
-		private readonly IWeatherService weatherService;
+		private readonly IThirdPartyWeatherService weatherService;
 
 		public DomainWeatherService(
 			IModelMapper mapper,
 			IDatabaseUnit database,
-			IWeatherService weatherService)
+			IThirdPartyWeatherService weatherService)
 		{
 			this.mapper = mapper;
 			this.database = database;
 			this.weatherService = weatherService;
-		}
-
-		public async Task<List<DomainCityModel>> SearchCityAsync(string term)
-		{
-			var cities = await this.weatherService.SearchCityAsync(term);
-			var model = cities.Select(this.mapper.Map<DomainCityModel>).ToList();
-
-			return model;
 		}
 
 		public async Task<DomainWeatherModel> GetCityWeatherAsync(object cityCode)
@@ -42,7 +34,7 @@ namespace RC.Weather.Domain.Services
 
 			if (condition == null)
 			{
-				var weather = await this.weatherService.GetCityWeatherAsync(cityCode);
+				var weather = await this.weatherService.GetAsync(cityCode);
 
 				condition = this.mapper.Map<ConditionDbModel>(weather);
 				condition.CityCode = code;

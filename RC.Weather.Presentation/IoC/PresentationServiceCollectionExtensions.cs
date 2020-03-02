@@ -9,6 +9,7 @@ namespace RC.Weather.Presentation.IoC
 		public static IServiceCollection AddPresentationServices(this IServiceCollection services, IConfiguration configuration)
 		{
 			services.AddApplicationServices(configuration);
+			services.AddScoped<IPresentationCityService, PresentationCityService>();
 			services.AddScoped<IPresentationWeatherService, PresentationWeatherService>();
 
 			return services;

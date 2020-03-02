@@ -14,7 +14,8 @@ namespace RC.Weather.ThirdParty.Services.IoC
 			{
 				client.BaseAddress = new System.Uri(configuration["AccuWeather:BaseUrl"]);
 			});
-			services.AddScoped<IWeatherService, AccuWeatherService>();
+			services.AddScoped<IThirdPartyCityService, AccuWeatherCityService>();
+			services.AddScoped<IThirdPartyWeatherService, AccuWeatherWeatherService>();
 
 			return services;
 		}

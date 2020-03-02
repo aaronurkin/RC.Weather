@@ -1,43 +1,25 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using RC.Weather.Presentation;
 using RC.Weather.Presentation.Models.Requests;
-using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace RC.Weather.Api.Controllers
 {
     public class CitiesController : ApplicationBaseController
     {
+        private readonly IPresentationCityService cityService;
+
+        public CitiesController(IPresentationCityService cityService)
+        {
+            this.cityService = cityService;
+        }
+
         // GET: api/cities
         [HttpGet]
-        public IEnumerable<int> Get([FromQuery] PresentationCitiesListRequest model)
+        public async Task<IActionResult> Get([FromQuery] PresentationCitiesListRequest model)
         {
-            return new int[] { model.Page, model.PageSize };
+            var response = await this.cityService.SearchCityAsync(model);
+            return StatusCode((int)response.HttpStatusCode, response.Data);
         }
-
-        /*
-        // GET: api/Cities/5
-        [HttpGet("{id}", Name = "Get")]
-        public string Get(int id)
-        {
-            return "value";
-        }
-
-        // POST: api/Cities
-        [HttpPost]
-        public void Post([FromBody] string value)
-        {
-        }
-
-        // PUT: api/Cities/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
-        {
-        }
-
-        // DELETE: api/ApiWithActions/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
-        }
-        */
     }
 }
