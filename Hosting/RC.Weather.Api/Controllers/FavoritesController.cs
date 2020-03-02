@@ -1,34 +1,40 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using System.Collections.Generic;
+using RC.Weather.Presentation;
+using RC.Weather.Presentation.Models.Requests;
 
 namespace RC.Weather.Api.Controllers
 {
     public class FavoritesController : ApplicationBaseController
     {
-        // GET: api/favorites
-        [HttpGet]
-        public IEnumerable<string> Get()
+        private readonly IPresentationFavoriteService favoriteService;
+
+        public FavoritesController(IPresentationFavoriteService favoriteService)
         {
-            return new string[] { "value1", "value2" };
+            this.favoriteService = favoriteService;
         }
 
-        // GET: api/favorites/5
-        [HttpGet("{id}", Name = "Get")]
-        public string Get(int id)
+        // GET: api/favorites
+        [HttpGet]
+        public IActionResult Get()
         {
-            return "value";
+            var response = this.favoriteService.Get();
+            return StatusCode((int)response.HttpStatusCode, response.Data);
         }
 
         // POST: api/favorites
         [HttpPost]
-        public void Post([FromBody] string value)
+        public IActionResult Post([FromBody] PresentationAddFavoriteRequest favorite)
         {
+            var response = this.favoriteService.Create(favorite);
+            return StatusCode((int)response.HttpStatusCode);
         }
 
         // DELETE: api/favorites
-        [HttpDelete("{id}")]
-        public void Delete(int id)
+        [HttpDelete("{cityCode}")]
+        public IActionResult Delete(string cityCode)
         {
+            var response = this.favoriteService.Delete(cityCode);
+            return StatusCode((int)response.HttpStatusCode);
         }
     }
 }

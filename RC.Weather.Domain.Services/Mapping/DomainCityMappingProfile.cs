@@ -1,6 +1,5 @@
 ﻿using AutoMapper;
 using RC.Weather.Domain.Models;
-using RC.Weather.Repositories.Models;
 using RC.Weather.ThirdParty.Models;
 
 namespace RC.Weather.Domain.Services.Mapping

@@ -11,6 +11,7 @@ namespace RC.Weather.Presentation.IoC
 			services.AddApplicationServices(configuration);
 			services.AddScoped<IPresentationCityService, PresentationCityService>();
 			services.AddScoped<IPresentationWeatherService, PresentationWeatherService>();
+			services.AddScoped<IPresentationFavoriteService, PresentationFavoriteService>();
 
 			return services;
 		}

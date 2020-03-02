@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using RC.Weather.Repositories.Exceptions;
 using RC.Weather.Repositories.Models;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace RC.Weather.Repositories.EntityFramework
@@ -33,6 +34,12 @@ namespace RC.Weather.Repositories.EntityFramework
 
 			this.dbContext.Favorites.Remove(favorite);
 			this.dbContext.SaveChanges();
+		}
+
+		public List<FavoriteCityDbModel> GetList()
+		{
+			var favorites = this.dbContext.Favorites.ToList();
+			return favorites;
 		}
 
 		public FavoriteCityDbModel GetSingle(string cityCode)

@@ -3,8 +3,6 @@ using RC.Weather.Domain.Models;
 using RC.Weather.Repositories;
 using RC.Weather.Repositories.Models;
 using RC.Weather.ThirdParty.Services.Weather;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace RC.Weather.Domain.Services

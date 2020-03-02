@@ -11,6 +11,7 @@ namespace RC.Weather.Application.Services.IoC
 			services.AddDomainServices(configuration);
 			services.AddScoped<IApplicationCityService, ApplicationCityService>();
 			services.AddScoped<IApplicationWeatherService, ApplicationWeatherService>();
+			services.AddScoped<IApplicationFavoriteService, ApplicationFavoriteService>();
 
 			return services;
 		}

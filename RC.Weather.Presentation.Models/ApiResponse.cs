@@ -2,7 +2,17 @@
 
 namespace RC.Weather.Presentation.Models
 {
-	public class ApiResponse<TData>
+	public class ApiResponse
+	{
+		public ApiResponse(HttpStatusCode httpStatusCode)
+		{
+			this.HttpStatusCode = httpStatusCode;
+		}
+
+		public HttpStatusCode HttpStatusCode { get; }
+	}
+
+	public class ApiResponse<TData> : ApiResponse
 	{
 		public ApiResponse(TData data)
 			: this(data, HttpStatusCode.OK)
@@ -10,18 +20,16 @@ namespace RC.Weather.Presentation.Models
 		}
 
 		public ApiResponse(HttpStatusCode httpStatusCode)
-			: this(default(TData), HttpStatusCode.OK)
+			: base(httpStatusCode)
 		{
 		}
 
 		public ApiResponse(TData data, HttpStatusCode httpStatusCode)
+			: base(httpStatusCode)
 		{
 			this.Data = data;
-			this.HttpStatusCode = httpStatusCode;
 		}
 
 		public TData Data { get; }
-
-		public HttpStatusCode HttpStatusCode { get; }
 	}
 }

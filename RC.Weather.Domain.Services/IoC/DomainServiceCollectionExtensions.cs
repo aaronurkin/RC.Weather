@@ -13,6 +13,7 @@ namespace RC.Weather.Domain.Services.IoC
 			services.AddThirdPartyServices(configuration);
 			services.AddScoped<IDomainCityService, DomainCityService>();
 			services.AddScoped<IDomainWeatherService, DomainWeatherService>();
+			services.AddScoped<IDomainFavoriteCityService, DomainFavoriteCityService>();
 
 			return services;
 		}
