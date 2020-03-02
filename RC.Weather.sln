@@ -29,6 +29,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RC.Weather.ThirdParty.Model
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RC.Weather.Repositories.Models", "RC.Weather.Repositories.Models\RC.Weather.Repositories.Models.csproj", "{E438B255-69AE-4FFC-8E54-CD0E28B51579}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RC.Weather.WebApplication.Angular", "RC.Weather.WebApplication.Angular\RC.Weather.WebApplication.Angular.csproj", "{8EFB9D6E-2DC9-401A-AD54-0A78BF8C7D9B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -83,12 +85,17 @@ Global
 		{E438B255-69AE-4FFC-8E54-CD0E28B51579}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E438B255-69AE-4FFC-8E54-CD0E28B51579}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E438B255-69AE-4FFC-8E54-CD0E28B51579}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8EFB9D6E-2DC9-401A-AD54-0A78BF8C7D9B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8EFB9D6E-2DC9-401A-AD54-0A78BF8C7D9B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8EFB9D6E-2DC9-401A-AD54-0A78BF8C7D9B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8EFB9D6E-2DC9-401A-AD54-0A78BF8C7D9B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{D0C7FA65-B4A0-49BD-AB3C-4CC4DA222D45} = {49DB5D79-B353-4F82-9408-B20CE7C9EA1A}
+		{8EFB9D6E-2DC9-401A-AD54-0A78BF8C7D9B} = {49DB5D79-B353-4F82-9408-B20CE7C9EA1A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {AC747485-CF17-4A58-9E05-3D5EFF4711ED}
