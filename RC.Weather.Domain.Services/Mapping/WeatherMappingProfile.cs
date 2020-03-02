@@ -9,7 +9,6 @@ namespace RC.Weather.Domain.Services.Mapping
 		public WeatherMappingProfile()
 		{
 			CreateMap<ThirdPartyWeatherApiResponse, DomainWeatherModel>()
-				.ForMember(weatherModel => weatherModel.CityName, o => o.Ignore())
 				.ForMember(weatherModel => weatherModel.IsFavorite, o => o.Ignore())
 				.ForMember(weatherModel => weatherModel.WeatherText, o => o.MapFrom(thirdParty => thirdParty.Text))
 				.ForMember(weatherModel => weatherModel.Temperature, o => o.MapFrom(thirdParty => thirdParty.Temperature));

@@ -2,8 +2,6 @@
 {
     public class ApplicationWeatherModel
     {
-        public string CityName { get; set; }
-
         public double Temperature { get; set; }
 
         public string WeatherText { get; set; }

@@ -9,7 +9,6 @@ namespace RC.Weather.Application.Services.Mapping
 		public WeatherMappingProfile()
 		{
 			CreateMap<DomainWeatherModel, ApplicationWeatherModel>()
-				.ForMember(app => app.CityName, o => o.MapFrom(domain => domain.CityName))
 				.ForMember(app => app.IsFavorite, o => o.MapFrom(domain => domain.IsFavorite))
 				.ForMember(app => app.Temperature, o => o.MapFrom(domain => domain.Temperature))
 				.ForMember(app => app.WeatherText, o => o.MapFrom(domain => domain.WeatherText));
