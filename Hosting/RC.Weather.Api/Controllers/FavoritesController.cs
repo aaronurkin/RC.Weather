@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using RC.Weather.Presentation;
-using RC.Weather.Presentation.Models.Requests;
+using RC.Weather.Presentation.Models;
 
 namespace RC.Weather.Api.Controllers
 {
@@ -23,7 +23,7 @@ namespace RC.Weather.Api.Controllers
 
         // POST: api/favorites
         [HttpPost]
-        public IActionResult Post([FromBody] PresentationAddFavoriteRequest favorite)
+        public IActionResult Post([FromBody] PresentationCityModel favorite)
         {
             var response = this.favoriteService.Create(favorite);
             return StatusCode((int)response.HttpStatusCode);

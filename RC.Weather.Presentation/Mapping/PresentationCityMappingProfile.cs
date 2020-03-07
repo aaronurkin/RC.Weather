@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using RC.Weather.Application.Models.Weather;
-using RC.Weather.Presentation.Models.Responses;
+using RC.Weather.Presentation.Models;
 
 namespace RC.Weather.Presentation.Mapping
 {
@@ -8,7 +8,7 @@ namespace RC.Weather.Presentation.Mapping
 	{
 		public PresentationCityMappingProfile()
 		{
-			CreateMap<ApplicationCityModel, PresentationCityResponse>().ReverseMap();
+			CreateMap<ApplicationCityModel, PresentationCityModel>().ReverseMap();
 		}
 	}
 }

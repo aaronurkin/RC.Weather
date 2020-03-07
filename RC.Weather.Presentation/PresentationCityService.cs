@@ -4,7 +4,6 @@ using RC.Weather.Application.Services;
 using RC.Weather.Common.Mapper;
 using RC.Weather.Presentation.Models;
 using RC.Weather.Presentation.Models.Requests;
-using RC.Weather.Presentation.Models.Responses;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -29,22 +28,22 @@ namespace RC.Weather.Presentation
 			this.cityService = cityService;
 		}
 
-		public async Task<ApiResponse<List<PresentationCityResponse>>> SearchCityAsync(PresentationCitiesListRequest requestDto)
+		public async Task<ApiResponse<List<PresentationCityModel>>> SearchCityAsync(PresentationCitiesListRequest requestDto)
 		{
-			ApiResponse<List<PresentationCityResponse>> response;
+			ApiResponse<List<PresentationCityModel>> response;
 
 			try
 			{
 				var appRequest = this.mapper.Map<ApplicationCitiesRequest>(requestDto);
 				var result = await this.cityService.SearchCityAsync(appRequest);
-				var data = result.Data?.Select(this.mapper.Map<PresentationCityResponse>).ToList();
+				var data = result.Data?.Select(this.mapper.Map<PresentationCityModel>).ToList();
 
-				response = new ApiResponse<List<PresentationCityResponse>>(data);
+				response = new ApiResponse<List<PresentationCityModel>>(data);
 			}
 			catch (Exception exception)
 			{
 				this.logger.LogError(exception, "Search city failed");
-				response = new ApiResponse<List<PresentationCityResponse>>(HttpStatusCode.InternalServerError);
+				response = new ApiResponse<List<PresentationCityModel>>(HttpStatusCode.InternalServerError);
 			}
 
 			return response;

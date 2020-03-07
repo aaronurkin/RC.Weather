@@ -3,8 +3,6 @@ using RC.Weather.Application.Models.Weather;
 using RC.Weather.Application.Services;
 using RC.Weather.Common.Mapper;
 using RC.Weather.Presentation.Models;
-using RC.Weather.Presentation.Models.Requests;
-using RC.Weather.Presentation.Models.Responses;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,7 +26,7 @@ namespace RC.Weather.Presentation
 			this.favoriteService = favoriteService;
 		}
 
-		public ApiResponse Create(PresentationAddFavoriteRequest request)
+		public ApiResponse Create(PresentationCityModel request)
 		{
 			ApiResponse response;
 
@@ -40,7 +38,7 @@ namespace RC.Weather.Presentation
 			}
 			catch (Exception exception)
 			{
-				this.logger.LogError(exception, $"Failed creating {request.CityName} (with code: {request.CityCode}) favorite cities");
+				this.logger.LogError(exception, $"Failed creating {request.Name} (with code: {request.Code}) favorite cities");
 				response = new ApiResponse(HttpStatusCode.InternalServerError);
 			}
 
@@ -65,20 +63,20 @@ namespace RC.Weather.Presentation
 			return response;
 		}
 
-		public ApiResponse<List<PresentationCityResponse>> Get()
+		public ApiResponse<List<PresentationCityModel>> Get()
 		{
-			ApiResponse<List<PresentationCityResponse>> response;
+			ApiResponse<List<PresentationCityModel>> response;
 
 			try
 			{
 				var favorites = this.favoriteService.GetList();
-				var result = favorites.Data.Select(this.mapper.Map<PresentationCityResponse>).ToList();
-				response = new ApiResponse<List<PresentationCityResponse>>(result, HttpStatusCode.OK);
+				var result = favorites.Data.Select(this.mapper.Map<PresentationCityModel>).ToList();
+				response = new ApiResponse<List<PresentationCityModel>>(result, HttpStatusCode.OK);
 			}
 			catch (Exception exception)
 			{
 				this.logger.LogError(exception, "Failed retrieving favorite cities");
-				response = new ApiResponse<List<PresentationCityResponse>>(HttpStatusCode.InternalServerError);
+				response = new ApiResponse<List<PresentationCityModel>>(HttpStatusCode.InternalServerError);
 			}
 
 			return response;
