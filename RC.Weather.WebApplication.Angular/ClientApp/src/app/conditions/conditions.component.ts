@@ -1,7 +1,10 @@
-import { Component, Input } from "@angular/core";
-import { IWeather } from "../models/weather";
-import { FavoritesService } from "../services/favorites-service";
+import { Component, Input, Output, EventEmitter } from "@angular/core";
+import { Router } from "@angular/router";
 import { ICity } from "../models/city";
+import { IWeather } from "../models/weather";
+import { IFavorite } from "../models/favorite";
+import { FavoriteAction } from "../models/enum.favorite-action";
+import { FavoritesService } from "../services/favorites-service";
 
 @Component({
   selector: 'app-conditions',
@@ -10,9 +13,15 @@ import { ICity } from "../models/city";
 })
 export class ConditionsComponent {
 
-  @Input() public weather: IWeather;
+  private isCityRemovable: boolean;
 
-  constructor(private favoritesService: FavoritesService) {
+  @Input() public weather: IWeather;
+  @Output() public removedFromFavorites: EventEmitter<IFavorite> = new EventEmitter();
+
+  constructor(
+    private router: Router,
+    private favoritesService: FavoritesService) {
+    this.isCityRemovable = /favorites/.test(this.router.url);
   }
 
   public addToFavorites(city: ICity): void {
@@ -24,6 +33,7 @@ export class ConditionsComponent {
   public removeFromFavorites(city: ICity): void {
     this.favoritesService.delete(city).subscribe(response => {
       this.weather.isFavorite = false;
+      this.isCityRemovable && this.removedFromFavorites.emit({ action: FavoriteAction.Delete, city: city });
     });
   }
 

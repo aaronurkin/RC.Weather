@@ -28,6 +28,8 @@
     <None Remove="ClientApp\src\app\conditions\conditions.component.ts" />
     <None Remove="ClientApp\src\app\models\city.ts" />
     <None Remove="ClientApp\src\app\models\condition.ts" />
+    <None Remove="ClientApp\src\app\models\enum.favorite-action.ts" />
+    <None Remove="ClientApp\src\app\models\favorite.ts" />
     <None Remove="ClientApp\src\app\models\weather.ts" />
     <None Remove="ClientApp\src\app\navigate\navigate.component.ts" />
     <None Remove="ClientApp\src\app\services\city.service.ts" />
@@ -39,6 +41,8 @@
     <TypeScriptCompile Include="ClientApp\src\app\conditions\conditions.component.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\models\city.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\models\condition.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\models\enum.favorite-action.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\models\favorite.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\models\weather.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\navigate\navigate.component.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\services\city.service.ts" />

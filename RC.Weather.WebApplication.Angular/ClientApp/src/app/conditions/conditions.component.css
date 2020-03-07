@@ -1,5 +1,7 @@
 .conditions {
+  font-size: 16px;
   float: left;
+  padding: 7px 0;
 }
 .actions {
     float: right;
