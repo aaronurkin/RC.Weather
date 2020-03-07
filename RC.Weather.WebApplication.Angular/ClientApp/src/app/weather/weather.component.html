@@ -1,0 +1,10 @@
+<div class="row">
+  <div class="col-sm-8">
+    <app-conditions *ngIf="weather" [weather]="weather"></app-conditions>
+  </div>
+  <div class="col-sm-4">
+    <div class="list-group" *ngIf="cities">
+      <button type="button" class="list-group-item" *ngFor="let city of cities" (click)="getConditions(city)">{{city.name}}</button>
+    </div>
+  </div>
+</div>

@@ -24,6 +24,28 @@
     <None Include="$(SpaRoot)**" Exclude="$(SpaRoot)node_modules\**" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Remove="ClientApp\src\app\conditions\conditions.component.ts" />
+    <None Remove="ClientApp\src\app\models\city.ts" />
+    <None Remove="ClientApp\src\app\models\condition.ts" />
+    <None Remove="ClientApp\src\app\models\weather.ts" />
+    <None Remove="ClientApp\src\app\navigate\navigate.component.ts" />
+    <None Remove="ClientApp\src\app\services\city.service.ts" />
+    <None Remove="ClientApp\src\app\services\favorites-service.ts" />
+    <None Remove="ClientApp\src\app\services\weather.service.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <TypeScriptCompile Include="ClientApp\src\app\conditions\conditions.component.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\models\city.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\models\condition.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\models\weather.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\navigate\navigate.component.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\services\city.service.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\services\favorites-service.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\services\weather.service.ts" />
+  </ItemGroup>
+
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">
     <!-- Ensure Node.js is installed -->
     <Exec Command="node --version" ContinueOnError="true">

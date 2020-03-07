@@ -4,5 +4,11 @@
 // The list of which env maps to which file can be found in `.angular-cli.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  weatherApi: {
+    baseUrl: 'https://localhost:44324',
+    citiesEndpoint: 'api/cities',
+    weatherEndpoint: 'api/weather',
+    favoritesEndpoint: 'api/favorites'
+  }
 };

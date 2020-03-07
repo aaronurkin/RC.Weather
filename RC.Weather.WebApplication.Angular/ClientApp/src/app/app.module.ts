@@ -5,18 +5,28 @@ import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
-import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { HomeComponent } from './home/home.component';
-import { CounterComponent } from './counter/counter.component';
-import { FetchDataComponent } from './fetch-data/fetch-data.component';
+import { WeatherComponent } from './weather/weather.component';
+import { NavigateComponent } from './navigate/navigate.component';
+import { FavoritesComponent } from './favorites/favorites.component';
+import { PageTitleComponent } from './page-title/page-title.component';
+import { ConditionsComponent } from './conditions/conditions.component';
+import { CitySearchComponent } from './city-search/city-search.component';
+
+import { FavoritesService } from './services/favorites-service';
+import { CityService } from './services/city.service';
+import { WeatherService } from './services/weather.service';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavMenuComponent,
     HomeComponent,
-    CounterComponent,
-    FetchDataComponent
+    WeatherComponent,
+    NavigateComponent,
+    FavoritesComponent,
+    PageTitleComponent,
+    ConditionsComponent,
+    CitySearchComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -24,11 +34,14 @@ import { FetchDataComponent } from './fetch-data/fetch-data.component';
     FormsModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
-      { path: 'counter', component: CounterComponent },
-      { path: 'fetch-data', component: FetchDataComponent },
+      { path: 'favorites', component: FavoritesComponent }
     ])
   ],
-  providers: [],
+  providers: [
+    CityService,
+    WeatherService,
+    FavoritesService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
