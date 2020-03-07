@@ -29,7 +29,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RC.Weather.ThirdParty.Model
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RC.Weather.Repositories.Models", "RC.Weather.Repositories.Models\RC.Weather.Repositories.Models.csproj", "{E438B255-69AE-4FFC-8E54-CD0E28B51579}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RC.Weather.WebApplication.Angular", "RC.Weather.WebApplication.Angular\RC.Weather.WebApplication.Angular.csproj", "{8EFB9D6E-2DC9-401A-AD54-0A78BF8C7D9B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RC.Weather.WebApplication.Angular", "Hosting\RC.Weather.WebApplication.Angular\RC.Weather.WebApplication.Angular.csproj", "{8EFB9D6E-2DC9-401A-AD54-0A78BF8C7D9B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
